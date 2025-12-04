@@ -211,6 +211,47 @@ def add_player():
 
     return render_template('add_player.html')
 
+@app.route('/add-team', methods=['POST'])
+def add_team():
+    try:
+        team_name = request.form.get('team_name')
+        if not team_name:
+            flash('Team name is required', 'error')
+            return redirect(url_for('add_player'))
+
+        teams = load_teams()
+        
+        # Check if team already exists
+        if any(t['name'].lower() == team_name.lower() for t in teams):
+            flash('Team already exists', 'error')
+            return redirect(url_for('add_player'))
+
+        new_team = {
+            "name": team_name,
+            "purse": 100.0,
+            "players": {
+                "batsmen": [],
+                "bowlers": [],
+                "wicketkeepers": [],
+                "allrounders": []
+            },
+            "stats": {
+                "batsmen_count": 0,
+                "bowlers_count": 0,
+                "wicketkeepers_count": 0,
+                "allrounders_count": 0
+            }
+        }
+
+        teams.append(new_team)
+        save_teams(teams)
+
+        flash('Team added successfully', 'success')
+        return redirect(url_for('add_player'))
+    except Exception as e:
+        flash(f'Error adding team: {str(e)}', 'error')
+        return redirect(url_for('add_player'))
+
 @app.route('/api/player/<category>/<player_name>/action', methods=['POST'])
 def player_action(category, player_name):
     try:
@@ -314,6 +355,39 @@ def reset_team(team_name):
         save_teams(teams)
         save_players(players)
 
+        return jsonify({'success': True})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/team/<team_name>/update-purse', methods=['POST'])
+def update_team_purse(team_name):
+    try:
+        data = request.json
+        amount = float(data.get('amount', 0))
+        
+        if amount < 0:
+            return jsonify({'error': 'Amount must be non-negative'}), 400
+
+        teams = load_teams()
+        team = next((t for t in teams if t['name'] == team_name), None)
+        
+        if not team:
+            return jsonify({'error': 'Team not found'}), 404
+
+        team['purse'] = amount
+        save_teams(teams)
+        
+        return jsonify({'success': True})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/team/<team_name>/delete', methods=['POST'])
+def delete_team(team_name):
+    try:
+        teams = load_teams()
+        # Filter out the team to delete
+        teams = [t for t in teams if t['name'] != team_name]
+        save_teams(teams)
         return jsonify({'success': True})
     except Exception as e:
         return jsonify({'error': str(e)}), 500
