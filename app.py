@@ -213,44 +213,48 @@ def add_player():
 
 @app.route('/add-team', methods=['POST'])
 def add_team():
-    try:
-        team_name = request.form.get('team_name')
-        if not team_name:
-            flash('Team name is required', 'error')
-            return redirect(url_for('add_player'))
+    if request.method == 'POST':
+        try:
+            team_name = request.form.get('team_name')
+            owner_name = request.form.get('owner_name')
+            
+            if not team_name:
+                flash('Team name is required!', 'error')
+                return redirect(url_for('add_player'))
 
-        teams = load_teams()
-        
-        # Check if team already exists
-        if any(t['name'].lower() == team_name.lower() for t in teams):
-            flash('Team already exists', 'error')
-            return redirect(url_for('add_player'))
-
-        new_team = {
-            "name": team_name,
-            "purse": 100.0,
-            "players": {
-                "batsmen": [],
-                "bowlers": [],
-                "wicketkeepers": [],
-                "allrounders": []
-            },
-            "stats": {
-                "batsmen_count": 0,
-                "bowlers_count": 0,
-                "wicketkeepers_count": 0,
-                "allrounders_count": 0
+            teams = load_teams()
+                
+            # Check if team already exists
+            if any(t['name'].lower() == team_name.lower() for t in teams):
+                flash('Team already exists!', 'error')
+                return redirect(url_for('add_player'))
+                
+            new_team = {
+                'name': team_name,
+                'owner_name': owner_name,
+                'purse': 100.0,
+                'players': {
+                    'batsmen': [],
+                    'bowlers': [],
+                    'wicketkeepers': [],
+                    'allrounders': []
+                },
+                'stats': {
+                    'batsmen_count': 0,
+                    'bowlers_count': 0,
+                    'wicketkeepers_count': 0,
+                    'allrounders_count': 0
+                }
             }
-        }
 
-        teams.append(new_team)
-        save_teams(teams)
+            teams.append(new_team)
+            save_teams(teams)
 
-        flash('Team added successfully', 'success')
-        return redirect(url_for('add_player'))
-    except Exception as e:
-        flash(f'Error adding team: {str(e)}', 'error')
-        return redirect(url_for('add_player'))
+            flash('Team added successfully', 'success')
+            return redirect(url_for('add_player'))
+        except Exception as e:
+            flash(f'Error adding team: {str(e)}', 'error')
+            return redirect(url_for('add_player'))
 
 @app.route('/api/player/<category>/<player_name>/action', methods=['POST'])
 def player_action(category, player_name):
@@ -539,6 +543,63 @@ def update_player():
         else:
             return jsonify({'error': 'Player not found'}), 404
 
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/team/<team_name>/update', methods=['POST'])
+def update_team(team_name):
+    try:
+        data = request.json
+        new_name = data.get('name')
+        new_owner = data.get('owner_name')
+        
+        if not new_name:
+            return jsonify({'error': 'Team name is required'}), 400
+            
+        teams = load_teams()
+        team = next((t for t in teams if t['name'] == team_name), None)
+        
+        if not team:
+            return jsonify({'error': 'Team not found'}), 404
+            
+        # If name is changing, check for duplicates
+        if new_name != team_name:
+            if any(t['name'].lower() == new_name.lower() for t in teams):
+                return jsonify({'error': 'Team name already exists'}), 400
+                
+        # Update team details
+        team['name'] = new_name
+        team['owner_name'] = new_owner
+        
+        # If name changed, update references in players
+        if new_name != team_name:
+            players = load_players()
+            
+            # Update sold_to in all_players
+            for category in players['all_players']:
+                for p in players['all_players'][category]:
+                    if p.get('sold_to') == team_name:
+                        p['sold_to'] = new_name
+                        
+            # Update sold_to in available_players
+            for category in players['available_players']:
+                for p in players['available_players'][category]:
+                    if p.get('sold_to') == team_name:
+                        p['sold_to'] = new_name
+
+            # Update sold_to in team's own player list (if stored there)
+            # Note: We are updating the team object in 'teams' list, but we also need to check if players inside it have sold_to
+            # Usually they do if we added them via player_action
+            for category in team['players']:
+                for p in team['players'][category]:
+                    if p.get('sold_to') == team_name:
+                        p['sold_to'] = new_name
+                        
+            save_players(players)
+            
+        save_teams(teams)
+        return jsonify({'success': True})
+        
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 

@@ -52,9 +52,14 @@
                         </thead>
                         <tbody>
                             {% for player in players[category] %}
-                            <tr>
+                            <tr data-category="{{ category }}" data-player="{{ player|tojson|forceescape }}">
                                 <td>{{ player.player_number }}</td>
-                                <td>{{ player.name }}</td>
+                                <td>
+                                    <a href="#" class="text-decoration-none"
+                                        onclick="showPlayerStats(this); return false;">
+                                        {{ player.name }}
+                                    </a>
+                                </td>
                                 <td>{{ player.stats.matches }}</td>
                                 {% if category in ['batsmen', 'wicketkeepers', 'allrounders'] %}
                                 <td>{{ player.stats.runs }}</td>
@@ -86,6 +91,20 @@
                 </div>
             </div>
             {% endfor %}
+        </div>
+    </div>
+</div>
+
+<!-- Player Stats Modal -->
+<div class="modal fade" id="playerStatsModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Player Statistics</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body" id="playerStatsContent">
+            </div>
         </div>
     </div>
 </div>
@@ -167,6 +186,40 @@
 </div>
 
 <script>
+    function showPlayerStats(element) {
+        const row = element.closest('tr');
+        const category = row.dataset.category;
+        const player = JSON.parse(row.dataset.player);
+
+        let statsHtml = `
+        <p><strong>Player Name:</strong> ${player.name}</p>
+        <p><strong>Player Number:</strong> ${player.player_number}</p>
+        <p><strong>Matches:</strong> ${player.stats.matches}</p>
+    `;
+
+        if (['batsmen', 'wicketkeepers', 'allrounders'].includes(category)) {
+            statsHtml += `
+            <p><strong>Runs:</strong> ${player.stats.runs}</p>
+            <p><strong>Average:</strong> ${player.stats.average}</p>
+            <p><strong>Strike Rate:</strong> ${player.stats.strike_rate}</p>
+            <p><strong>Highest Score:</strong> ${player.stats.highest_score}</p>
+            <p><strong>50s:</strong> ${player.stats.fifties}</p>
+            <p><strong>100s:</strong> ${player.stats.hundreds}</p>
+        `;
+        }
+
+        if (['bowlers', 'allrounders'].includes(category)) {
+            statsHtml += `
+            <p><strong>Wickets:</strong> ${player.stats.wickets}</p>
+            <p><strong>Economy:</strong> ${player.stats.economy}</p>
+            <p><strong>Best Bowling:</strong> ${player.stats.best_bowling}</p>
+        `;
+        }
+
+        document.getElementById('playerStatsContent').innerHTML = statsHtml;
+        new bootstrap.Modal(document.getElementById('playerStatsModal')).show();
+    }
+
     function removePlayer(category, playerName) {
         if (confirm('Are you sure you want to remove this player? This will also remove them from Available Players.')) {
             fetch('/api/remove-player-all', {

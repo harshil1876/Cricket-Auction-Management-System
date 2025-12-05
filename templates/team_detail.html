@@ -2,8 +2,15 @@
 {% block content %}
 <div class="card">
     <div class="card-header d-flex justify-content-between align-items-center">
-        <h5 class="mb-0">{{ team.name }}</h5>
         <div>
+            <h5 class="mb-0">{{ team.name }}</h5>
+            {% if team.owner_name %}
+            <small class="text-muted">{{ team.owner_name }}</small>
+            {% endif %}
+        </div>
+        <div>
+            <button class="btn btn-secondary me-2" data-team-name="{{ team.name }}"
+                data-owner-name="{{ team.get('owner_name', '') }}" onclick="editTeam(this)">Edit</button>
             <button class="btn btn-success me-2" data-team-name="{{ team.name }}" data-purse="{{ team.purse }}"
                 onclick="addPurse(this)">Add Purse</button>
             <button class="btn btn-warning me-2" data-team-name="{{ team.name }}" onclick="resetTeam(this)">Reset
@@ -289,6 +296,32 @@
             </div>
         </div>
 
+        <!-- Edit Team Modal -->
+        <div class="modal fade" id="editTeamModal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Edit Team Details</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editTeamForm">
+                            <input type="hidden" id="originalTeamName">
+                            <div class="mb-3">
+                                <label for="editTeamName" class="form-label">Team Name</label>
+                                <input type="text" class="form-control" id="editTeamName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editOwnerName" class="form-label">Team Owner Name</label>
+                                <input type="text" class="form-control" id="editOwnerName">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <script>
             function showPlayerStats(button) {
                 const category = button.getAttribute('data-category');
@@ -383,6 +416,45 @@
                     .then(data => {
                         if (data.success) {
                             location.reload();
+                        } else {
+                            alert('Error: ' + data.error);
+                        }
+                    });
+            });
+
+            function editTeam(button) {
+                const teamName = button.getAttribute('data-team-name');
+                const ownerName = button.getAttribute('data-owner-name');
+
+                document.getElementById('originalTeamName').value = teamName;
+                document.getElementById('editTeamName').value = teamName;
+                document.getElementById('editOwnerName').value = ownerName;
+
+                new bootstrap.Modal(document.getElementById('editTeamModal')).show();
+            }
+
+            document.getElementById('editTeamForm').addEventListener('submit', function (e) {
+                e.preventDefault();
+                const originalName = document.getElementById('originalTeamName').value;
+                const newName = document.getElementById('editTeamName').value;
+                const newOwner = document.getElementById('editOwnerName').value;
+
+                fetch(`/api/team/${originalName}/update`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name: newName,
+                        owner_name: newOwner
+                    })
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            if (originalName !== newName) {
+                                window.location.href = `/team/${encodeURIComponent(newName)}`;
+                            } else {
+                                location.reload();
+                            }
                         } else {
                             alert('Error: ' + data.error);
                         }

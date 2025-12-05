@@ -55,7 +55,8 @@
                     "economy": 0,
                     "best_bowling": ""
                 },
-                "selling_price": 18.0
+                "selling_price": 15.0,
+                "sold_to": "Mumbai Indians"
             },
             {
                 "player_number": 4,
@@ -131,7 +132,8 @@
                     "economy": 0,
                     "best_bowling": ""
                 },
-                "selling_price": 21.0
+                "sold_to": "Mumbai Indians",
+                "selling_price": 5.0
             },
             {
                 "player_number": 8,
@@ -2620,8 +2622,7 @@
                     "wickets": 0,
                     "economy": 0,
                     "best_bowling": ""
-                },
-                "selling_price": 21.0
+                }
             },
             {
                 "player_number": 25,
@@ -2886,8 +2887,7 @@
                     "wickets": 0,
                     "economy": 0,
                     "best_bowling": ""
-                },
-                "selling_price": 18.0
+                }
             },
             {
                 "player_number": 2,

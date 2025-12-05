@@ -211,7 +211,7 @@
         const category = document.getElementById('selectCategory').value;
         const numberSelect = document.getElementById('selectNumber');
         const players = Array.from(document.querySelectorAll('.player-row'))
-            .filter(row => row.dataset.category === category);
+            .filter(row => row.dataset.category === category && row.dataset.status !== 'sold');
 
         numberSelect.innerHTML = '<option value="">Select Player</option>';
 
