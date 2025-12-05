@@ -104,54 +104,54 @@ def view_team(team_name):
     return render_template('team_detail.html', team=team)
     return redirect(url_for('teams'))
 
-def evaluate_team(team):
-    """Calculate team score and analysis based on player composition"""
-    score = 0
-    strengths = []
-    weaknesses = []
-
-    # Evaluate batting strength
-    if team['stats']['batsmen_count'] >= 4:
-        score += 5
-        strengths.append(f"Strong batting lineup with {team['stats']['batsmen_count']} batsmen")
-    else:
-        weaknesses.append(f"Need more specialist batsmen (currently {team['stats']['batsmen_count']})")
-
-    # Evaluate bowling strength
-    if team['stats']['bowlers_count'] >= 4:
-        score += 5
-        strengths.append(f"Well-rounded bowling attack with {team['stats']['bowlers_count']} bowlers")
-    else:
-        weaknesses.append(f"Bowling attack needs strengthening (currently {team['stats']['bowlers_count']})")
-
-    # Evaluate wicketkeeper presence
-    if team['stats']['wicketkeepers_count'] >= 1:
-        score += 5
-        strengths.append(f"Has {team['stats']['wicketkeepers_count']} dedicated wicketkeeper(s)")
-    else:
-        weaknesses.append("Missing specialist wicketkeeper")
-
-    # Evaluate all-rounders
-    if team['stats']['allrounders_count'] >= 2:
-        score += 5
-        strengths.append(f"Good balance with {team['stats']['allrounders_count']} all-rounders")
-    else:
-        weaknesses.append(f"Need more all-rounders for team balance (currently {team['stats']['allrounders_count']})")
-
-    # Evaluate budget management
-    #if team['purse'] > 30:
-    #    score += 20
-    #    strengths.append(f"Good budget management (₹{team['purse']}M remaining)")
-    #else:
-    #    weaknesses.append(f"Limited budget remaining (₹{team['purse']}M)")
-
-    return {
-        'score': score,
-        'grade': 'A+' if score >= 18 else 'A' if score >= 15 else 'B' if score >= 12 else 'C' if score >= 9 else 'D',
-        'strengths': strengths,
-        'weaknesses': weaknesses,
-        'stats': team['stats']
-    }
+#def evaluate_team(team):
+#    """Calculate team score and analysis based on player composition"""
+#    score = 0
+#    strengths = []
+#    weaknesses = []
+#
+#    # Evaluate batting strength
+#    if team['stats']['batsmen_count'] >= 4:
+#        score += 5
+#        strengths.append(f"Strong batting lineup with {team['stats']['batsmen_count']} batsmen")
+#    else:
+#        weaknesses.append(f"Need more specialist batsmen (currently {team['stats']['batsmen_count']})")
+#
+#    # Evaluate bowling strength
+#    if team['stats']['bowlers_count'] >= 4:
+#        score += 5
+#        strengths.append(f"Well-rounded bowling attack with {team['stats']['bowlers_count']} bowlers")
+#    else:
+#        weaknesses.append(f"Bowling attack needs strengthening (currently {team['stats']['bowlers_count']})")
+#
+#    # Evaluate wicketkeeper presence
+#    if team['stats']['wicketkeepers_count'] >= 1:
+#        score += 5
+#        strengths.append(f"Has {team['stats']['wicketkeepers_count']} dedicated wicketkeeper(s)")
+#    else:
+#        weaknesses.append("Missing specialist wicketkeeper")
+#
+#    # Evaluate all-rounders
+#    if team['stats']['allrounders_count'] >= 2:
+#        score += 5
+#        strengths.append(f"Good balance with {team['stats']['allrounders_count']} all-rounders")
+#    else:
+#        weaknesses.append(f"Need more all-rounders for team balance (currently {team['stats']['allrounders_count']})")
+#
+#    # Evaluate budget management
+#    #if team['purse'] > 30:
+#    #    score += 20
+#    #    strengths.append(f"Good budget management (₹{team['purse']}M remaining)")
+#    #else:
+#    #    weaknesses.append(f"Limited budget remaining (₹{team['purse']}M)")
+#
+#    return {
+#        'score': score,
+#        'grade': 'A+' if score >= 18 else 'A' if score >= 15 else 'B' if score >= 12 else 'C' if score >= 9 else 'D',
+#        'strengths': strengths,
+#        'weaknesses': weaknesses,
+#        'stats': team['stats']
+#    }
 
 @app.route('/add-player', methods=['GET', 'POST'])
 def add_player():
@@ -280,20 +280,16 @@ def player_action(category, player_name):
             if team['purse'] >= price:
                 # Update player status and store the selling price
                 player['status'] = 'sold'
-                player['selling_price'] = price  # Store the selling price
+                player['selling_price'] = price
+                player['sold_to'] = team_name
 
                 # Update the same player in all_players
                 all_player = next((p for p in players['all_players'][category] 
                                 if p['name'] == player_name), None)
                 if all_player:
                     all_player['status'] = 'sold'
-                    all_player['selling_price'] = price  # Store the selling price
-
-                # Remove from available players
-                players['available_players'][category] = [
-                    p for p in players['available_players'][category]
-                    if p['name'] != player_name
-                ]
+                    all_player['selling_price'] = price
+                    all_player['sold_to'] = team_name
 
                 # Add to team
                 team['players'][category].append(player)
@@ -344,8 +340,18 @@ def reset_team(team_name):
         # Move all players back to the available players list and reset their status
         for category in ['batsmen', 'bowlers', 'wicketkeepers', 'allrounders']:
             for player in team['players'][category]:
-                player['status'] = 'untouched'
-                players['available_players'][category].append(player)
+                # Update player in available players
+                avail_player = next((p for p in players['available_players'][category] 
+                                   if p['name'] == player['name']), None)
+                if avail_player:
+                    avail_player['status'] = 'untouched'
+                    avail_player.pop('selling_price', None)
+                    avail_player.pop('sold_to', None)
+                else:
+                    player['status'] = 'untouched'
+                    player.pop('selling_price', None)
+                    player.pop('sold_to', None)
+                    players['available_players'][category].append(player)
             # Clear the team's players in this category
             team['players'][category] = []
             # Reset the player count for this category
@@ -460,9 +466,19 @@ def remove_player():
         ]
         team['stats'][f'{category}_count'] -= 1
 
-        # Add back to available players with status 'untouched'
-        player['status'] = 'untouched'
-        players['available_players'][category].append(player)
+        # Update player in available players
+        avail_player = next((p for p in players['available_players'][category] 
+                           if p['name'] == player_name), None)
+        if avail_player:
+            avail_player['status'] = 'untouched'
+            avail_player.pop('selling_price', None)
+            avail_player.pop('sold_to', None)
+        else:
+            # Fallback if not found (shouldn't happen with new logic, but safe to keep)
+            player['status'] = 'untouched'
+            player.pop('selling_price', None)
+            player.pop('sold_to', None)
+            players['available_players'][category].append(player)
 
         save_teams(teams)
         save_players(players)
@@ -616,10 +632,10 @@ def evaluate_team(team):
     avg_economy_allrounders = total_economy_allrounders / allrounders_count if allrounders_count > 0 else 0
 
     # Evaluate batting strength (batsmen only)
-    if batsmen_count >= 7 and avg_average_batsmen > 40 and avg_strike_rate_batsmen > 150 and total_runs_batsmen > 2000:
+    if batsmen_count >= 7 and avg_average_batsmen > 35 and avg_strike_rate_batsmen > 140 and total_runs_batsmen > 2000:
         score += 25
         strengths.append(f"Strong batting lineup with {batsmen_count} batsmen, average of {avg_average_batsmen:.2f}, strike rate of {avg_strike_rate_batsmen:.2f}, and {total_runs_batsmen} runs")
-    elif batsmen_count >= 5 and avg_average_batsmen > 30 and avg_strike_rate_batsmen > 130 and total_runs_batsmen > 1500:
+    elif batsmen_count >= 5 and avg_average_batsmen > 25 and avg_strike_rate_batsmen > 130 and total_runs_batsmen > 1500:
         score += 15
         strengths.append(f"Decent batting lineup with {batsmen_count} batsmen, average of {avg_average_batsmen:.2f}, strike rate of {avg_strike_rate_batsmen:.2f}, and {total_runs_batsmen} runs")
     elif batsmen_count >= 3 and avg_average_batsmen > 15 and avg_strike_rate_batsmen > 100 and total_runs_batsmen > 500:
@@ -642,13 +658,13 @@ def evaluate_team(team):
         weaknesses.append(f"Bowling attack needs improvement: {bowlers_count} bowlers, economy of {avg_economy_bowlers:.2f}, and {total_wickets_bowlers} wickets")
 
     # Evaluate all-rounders
-    if allrounders_count >= 7 and avg_average_allrounders > 30 and avg_economy_allrounders < 8 and avg_strike_rate_allrounders > 120 and total_wickets_allrounders > 50:
+    if allrounders_count >= 7 and avg_average_allrounders > 25 and avg_economy_allrounders < 9 and avg_strike_rate_allrounders > 120 and total_wickets_allrounders > 50:
         score += 20
         strengths.append(f"Good balance with {allrounders_count} all-rounders, average of {avg_average_allrounders:.2f}, economy of {avg_economy_allrounders:.2f}, and {total_wickets_allrounders} wickets with {avg_strike_rate_allrounders:.2f} strike rate")
-    elif allrounders_count >= 5 and avg_average_allrounders > 20 and avg_economy_allrounders < 10 and avg_strike_rate_allrounders > 110 and total_wickets_allrounders > 20:
+    elif allrounders_count >= 5 and avg_average_allrounders > 15 and avg_economy_allrounders < 12 and avg_strike_rate_allrounders > 110 and total_wickets_allrounders > 20:
         score += 15
         strengths.append(f"Decent balance with {allrounders_count} all-rounders, average of {avg_average_allrounders:.2f}, economy of {avg_economy_allrounders:.2f}, and {total_wickets_allrounders} wickets with {avg_strike_rate_allrounders:.2f} strike rate")
-    elif allrounders_count >= 3 and avg_average_allrounders > 12 and avg_economy_allrounders < 15 and avg_strike_rate_allrounders > 100 and total_wickets_allrounders > 10:
+    elif allrounders_count >= 3 and avg_average_allrounders > 10 and avg_economy_allrounders < 15 and avg_strike_rate_allrounders > 100 and total_wickets_allrounders > 10:
         score += 5
         strengths.append(f"Average balance with {allrounders_count} all-rounders, average of {avg_average_allrounders:.2f}, economy of {avg_economy_allrounders:.2f}, and {total_wickets_allrounders} wickets with {avg_strike_rate_allrounders:.2f} strike rate")
     else:

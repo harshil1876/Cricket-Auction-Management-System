@@ -15,7 +15,8 @@
                     "fifties": 5,
                     "hundreds": 1
                 },
-                "selling_price": 26.0
+                "selling_price": 5.0,
+                "sold_to": "Mumbai Indians"
             },
             {
                 "player_number": 2,
@@ -34,7 +35,8 @@
                     "economy": 0,
                     "best_bowling": ""
                 },
-                "selling_price": 25.0
+                "selling_price": 18.0,
+                "sold_to": "Royal Challengers Bangalore"
             },
             {
                 "player_number": 3,
@@ -53,7 +55,7 @@
                     "economy": 0,
                     "best_bowling": ""
                 },
-                "selling_price": 5.0
+                "selling_price": 18.0
             },
             {
                 "player_number": 4,
@@ -72,7 +74,7 @@
                     "economy": 0,
                     "best_bowling": ""
                 },
-                "selling_price": 24.0
+                "selling_price": 5.0
             },
             {
                 "player_number": 5,
@@ -148,7 +150,7 @@
                     "economy": 0,
                     "best_bowling": ""
                 },
-                "selling_price": 30.0
+                "selling_price": 8.0
             },
             {
                 "player_number": 9,
@@ -167,7 +169,7 @@
                     "economy": 0,
                     "best_bowling": ""
                 },
-                "selling_price": 31.0
+                "selling_price": 2.0
             },
             {
                 "player_number": 10,
@@ -186,7 +188,7 @@
                     "economy": 0,
                     "best_bowling": ""
                 },
-                "selling_price": 32.0
+                "selling_price": 10.0
             },
             {
                 "player_number": 11,
@@ -243,7 +245,7 @@
                     "economy": 0,
                     "best_bowling": ""
                 },
-                "selling_price": 10.0
+                "selling_price": 2.0
             },
             {
                 "player_number": 14,
@@ -785,7 +787,7 @@
                     "economy": 7.56,
                     "best_bowling": "5/19"
                 },
-                "selling_price": 20.0
+                "selling_price": 2.0
             },
             {
                 "player_number": 102,
@@ -842,7 +844,7 @@
                     "economy": 7.3,
                     "best_bowling": "5/10"
                 },
-                "selling_price": 35.0
+                "selling_price": 2.0
             },
             {
                 "player_number": 105,
@@ -861,7 +863,7 @@
                     "economy": 6.82,
                     "best_bowling": "4/24"
                 },
-                "selling_price": 35.0
+                "selling_price": 2.0
             },
             {
                 "player_number": 106,
@@ -880,7 +882,7 @@
                     "economy": 8.21,
                     "best_bowling": "4/15"
                 },
-                "selling_price": 17.0
+                "selling_price": 2.0
             },
             {
                 "player_number": 107,
@@ -918,7 +920,7 @@
                     "economy": 7.84,
                     "best_bowling": "5/40"
                 },
-                "selling_price": 31.0
+                "selling_price": 2.0
             },
             {
                 "player_number": 109,
@@ -937,7 +939,7 @@
                     "economy": 7.14,
                     "best_bowling": "5/13"
                 },
-                "selling_price": 21.0
+                "selling_price": 2.0
             },
             {
                 "player_number": 110,
@@ -956,7 +958,7 @@
                     "economy": 8.29,
                     "best_bowling": "4/18"
                 },
-                "selling_price": 8.0
+                "selling_price": 2.0
             },
             {
                 "player_number": 111,
@@ -1537,7 +1539,7 @@
                     "economy": 0,
                     "best_bowling": ""
                 },
-                "selling_price": 34.0
+                "selling_price": 5.0
             },
             {
                 "player_number": 202,
@@ -1650,7 +1652,7 @@
                     "economy": 0,
                     "best_bowling": ""
                 },
-                "selling_price": 10.0
+                "selling_price": 2.0
             },
             {
                 "player_number": 208,
@@ -1801,7 +1803,7 @@
                     "economy": 9.35,
                     "best_bowling": "5/15"
                 },
-                "selling_price": 5.0
+                "selling_price": 2.0
             },
             {
                 "player_number": 302,
@@ -1820,7 +1822,7 @@
                     "economy": 8.64,
                     "best_bowling": "3/15"
                 },
-                "selling_price": 18.0
+                "selling_price": 2.0
             },
             {
                 "player_number": 303,
@@ -1839,7 +1841,7 @@
                     "economy": 9.1,
                     "best_bowling": "3/17"
                 },
-                "selling_price": 28.0
+                "selling_price": 2.0
             },
             {
                 "player_number": 304,
@@ -1858,7 +1860,7 @@
                     "economy": 8.28,
                     "best_bowling": "2/15"
                 },
-                "selling_price": 22.0
+                "selling_price": 2.0
             },
             {
                 "player_number": 305,
@@ -1877,7 +1879,7 @@
                     "economy": 7.62,
                     "best_bowling": "5/16"
                 },
-                "selling_price": 21.0
+                "selling_price": 2.0
             },
             {
                 "player_number": 306,
@@ -2078,7 +2080,7 @@
                     "economy": 6.73,
                     "best_bowling": "5/19"
                 },
-                "selling_price": 14.0
+                "selling_price": 2.0
             },
             {
                 "player_number": 317,
@@ -2246,7 +2248,7 @@
                     "economy": 8.79,
                     "best_bowling": "4/44"
                 },
-                "selling_price": 13.0
+                "selling_price": 2.0
             },
             {
                 "player_number": 326,
@@ -2584,44 +2586,6 @@
                 "selling_price": 5.0
             },
             {
-                "player_number": 8,
-                "name": "Kl Rahul",
-                "base_price": 5.0,
-                "status": "untouched",
-                "stats": {
-                    "matches": 132,
-                    "runs": 4683,
-                    "average": 45.47,
-                    "strike_rate": 134.61,
-                    "highest_score": 132,
-                    "fifties": 37,
-                    "hundreds": 4,
-                    "wickets": 0,
-                    "economy": 0,
-                    "best_bowling": ""
-                },
-                "selling_price": 30.0
-            },
-            {
-                "player_number": 3,
-                "name": "Rohit sharma",
-                "base_price": 5.0,
-                "status": "untouched",
-                "stats": {
-                    "matches": 257,
-                    "runs": 6628,
-                    "average": 29.72,
-                    "strike_rate": 131.15,
-                    "highest_score": 109,
-                    "fifties": 43,
-                    "hundreds": 2,
-                    "wickets": 0,
-                    "economy": 0,
-                    "best_bowling": ""
-                },
-                "selling_price": 5.0
-            },
-            {
                 "player_number": 35,
                 "name": "Daryl Mitchell",
                 "base_price": 2.0,
@@ -2717,44 +2681,6 @@
                 "selling_price": 8.0
             },
             {
-                "player_number": 10,
-                "name": "AB de Villiers",
-                "base_price": 5.0,
-                "status": "untouched",
-                "stats": {
-                    "matches": 184,
-                    "runs": 5162,
-                    "average": 39.71,
-                    "strike_rate": 151.69,
-                    "highest_score": 132,
-                    "fifties": 40,
-                    "hundreds": 3,
-                    "wickets": 0,
-                    "economy": 0,
-                    "best_bowling": ""
-                },
-                "selling_price": 32.0
-            },
-            {
-                "player_number": 4,
-                "name": "Suryakumar Yadav",
-                "base_price": 5.0,
-                "status": "untouched",
-                "stats": {
-                    "matches": 150,
-                    "runs": 3594,
-                    "average": 32.09,
-                    "strike_rate": 145.33,
-                    "highest_score": 103,
-                    "fifties": 24,
-                    "hundreds": 2,
-                    "wickets": 0,
-                    "economy": 0,
-                    "best_bowling": ""
-                },
-                "selling_price": 24.0
-            },
-            {
                 "player_number": 28,
                 "name": "Kane Williamson",
                 "base_price": 2.0,
@@ -2772,25 +2698,6 @@
                     "best_bowling": ""
                 },
                 "selling_price": 16.0
-            },
-            {
-                "player_number": 9,
-                "name": "Chris Gayle",
-                "base_price": 5.0,
-                "status": "untouched",
-                "stats": {
-                    "matches": 142,
-                    "runs": 4965,
-                    "average": 39.72,
-                    "strike_rate": 148.97,
-                    "highest_score": 175,
-                    "fifties": 31,
-                    "hundreds": 6,
-                    "wickets": 0,
-                    "economy": 0,
-                    "best_bowling": ""
-                },
-                "selling_price": 31.0
             },
             {
                 "player_number": 34,
@@ -2945,25 +2852,6 @@
                 "selling_price": 22.0
             },
             {
-                "player_number": 13,
-                "name": "David Warner",
-                "base_price": 2.0,
-                "status": "untouched",
-                "stats": {
-                    "matches": 184,
-                    "runs": 6565,
-                    "average": 40.52,
-                    "strike_rate": 139.77,
-                    "highest_score": 126,
-                    "fifties": 62,
-                    "hundreds": 4,
-                    "wickets": 0,
-                    "economy": 0,
-                    "best_bowling": ""
-                },
-                "selling_price": 10.0
-            },
-            {
                 "player_number": 5,
                 "name": "Shubman Gill",
                 "base_price": 5.0,
@@ -2983,20 +2871,23 @@
                 "selling_price": 32.0
             },
             {
-                "player_number": 1,
-                "name": "Travis Head",
+                "player_number": 3,
+                "name": "Rohit sharma",
                 "base_price": 5.0,
                 "status": "untouched",
                 "stats": {
-                    "matches": 25,
-                    "runs": 772,
-                    "average": 36.76,
-                    "strike_rate": 173.87,
-                    "highest_score": 102,
-                    "fifties": 5,
-                    "hundreds": 1
+                    "matches": 257,
+                    "runs": 6628,
+                    "average": 29.72,
+                    "strike_rate": 131.15,
+                    "highest_score": 109,
+                    "fifties": 43,
+                    "hundreds": 2,
+                    "wickets": 0,
+                    "economy": 0,
+                    "best_bowling": ""
                 },
-                "selling_price": 26.0
+                "selling_price": 18.0
             },
             {
                 "player_number": 2,
@@ -3014,8 +2905,117 @@
                     "wickets": 0,
                     "economy": 0,
                     "best_bowling": ""
+                }
+            },
+            {
+                "player_number": 8,
+                "name": "Kl Rahul",
+                "base_price": 5.0,
+                "status": "untouched",
+                "stats": {
+                    "matches": 132,
+                    "runs": 4683,
+                    "average": 45.47,
+                    "strike_rate": 134.61,
+                    "highest_score": 132,
+                    "fifties": 37,
+                    "hundreds": 4,
+                    "wickets": 0,
+                    "economy": 0,
+                    "best_bowling": ""
                 },
-                "selling_price": 25.0
+                "selling_price": 8.0
+            },
+            {
+                "player_number": 10,
+                "name": "AB de Villiers",
+                "base_price": 5.0,
+                "status": "untouched",
+                "stats": {
+                    "matches": 184,
+                    "runs": 5162,
+                    "average": 39.71,
+                    "strike_rate": 151.69,
+                    "highest_score": 132,
+                    "fifties": 40,
+                    "hundreds": 3,
+                    "wickets": 0,
+                    "economy": 0,
+                    "best_bowling": ""
+                },
+                "selling_price": 10.0
+            },
+            {
+                "player_number": 4,
+                "name": "Suryakumar Yadav",
+                "base_price": 5.0,
+                "status": "untouched",
+                "stats": {
+                    "matches": 150,
+                    "runs": 3594,
+                    "average": 32.09,
+                    "strike_rate": 145.33,
+                    "highest_score": 103,
+                    "fifties": 24,
+                    "hundreds": 2,
+                    "wickets": 0,
+                    "economy": 0,
+                    "best_bowling": ""
+                },
+                "selling_price": 5.0
+            },
+            {
+                "player_number": 9,
+                "name": "Chris Gayle",
+                "base_price": 5.0,
+                "status": "untouched",
+                "stats": {
+                    "matches": 142,
+                    "runs": 4965,
+                    "average": 39.72,
+                    "strike_rate": 148.97,
+                    "highest_score": 175,
+                    "fifties": 31,
+                    "hundreds": 6,
+                    "wickets": 0,
+                    "economy": 0,
+                    "best_bowling": ""
+                },
+                "selling_price": 2.0
+            },
+            {
+                "player_number": 13,
+                "name": "David Warner",
+                "base_price": 2.0,
+                "status": "untouched",
+                "stats": {
+                    "matches": 184,
+                    "runs": 6565,
+                    "average": 40.52,
+                    "strike_rate": 139.77,
+                    "highest_score": 126,
+                    "fifties": 62,
+                    "hundreds": 4,
+                    "wickets": 0,
+                    "economy": 0,
+                    "best_bowling": ""
+                },
+                "selling_price": 2.0
+            },
+            {
+                "player_number": 1,
+                "name": "Travis Head",
+                "base_price": 5.0,
+                "status": "untouched",
+                "stats": {
+                    "matches": 25,
+                    "runs": 772,
+                    "average": 36.76,
+                    "strike_rate": 173.87,
+                    "highest_score": 102,
+                    "fifties": 5,
+                    "hundreds": 1
+                }
             }
         ],
         "bowlers": [
@@ -3409,44 +3409,6 @@
                 "selling_price": 5.0
             },
             {
-                "player_number": 105,
-                "name": "Rashid Khan",
-                "base_price": 5.0,
-                "status": "untouched",
-                "stats": {
-                    "matches": 121,
-                    "runs": 0,
-                    "average": 0,
-                    "strike_rate": 0,
-                    "highest_score": 0,
-                    "fifties": 0,
-                    "hundreds": 0,
-                    "wickets": 149,
-                    "economy": 6.82,
-                    "best_bowling": "4/24"
-                },
-                "selling_price": 35.0
-            },
-            {
-                "player_number": 108,
-                "name": "Yuzvendra Chahal",
-                "base_price": 5.0,
-                "status": "untouched",
-                "stats": {
-                    "matches": 160,
-                    "runs": 0,
-                    "average": 0,
-                    "strike_rate": 0,
-                    "highest_score": 0,
-                    "fifties": 0,
-                    "hundreds": 0,
-                    "wickets": 205,
-                    "economy": 7.84,
-                    "best_bowling": "5/40"
-                },
-                "selling_price": 31.0
-            },
-            {
                 "player_number": 116,
                 "name": "Josh Hazlewood",
                 "base_price": 2.0,
@@ -3485,25 +3447,6 @@
                 "selling_price": 2.0
             },
             {
-                "player_number": 101,
-                "name": "Bhuvneshwar Kumar",
-                "base_price": 5.0,
-                "status": "untouched",
-                "stats": {
-                    "matches": 176,
-                    "runs": 0,
-                    "average": 0,
-                    "strike_rate": 0,
-                    "highest_score": 0,
-                    "fifties": 0,
-                    "hundreds": 0,
-                    "wickets": 181,
-                    "economy": 7.56,
-                    "best_bowling": "5/19"
-                },
-                "selling_price": 20.0
-            },
-            {
                 "player_number": 117,
                 "name": "Kuldeep Yadav",
                 "base_price": 2.0,
@@ -3523,44 +3466,6 @@
                 "selling_price": 11.0
             },
             {
-                "player_number": 110,
-                "name": "Trent Boult",
-                "base_price": 2.0,
-                "status": "untouched",
-                "stats": {
-                    "matches": 104,
-                    "runs": 0,
-                    "average": 0,
-                    "strike_rate": 0,
-                    "highest_score": 0,
-                    "fifties": 0,
-                    "hundreds": 0,
-                    "wickets": 121,
-                    "economy": 8.29,
-                    "best_bowling": "4/18"
-                },
-                "selling_price": 8.0
-            },
-            {
-                "player_number": 106,
-                "name": "Mitchell Starc",
-                "base_price": 5.0,
-                "status": "untouched",
-                "stats": {
-                    "matches": 40,
-                    "runs": 0,
-                    "average": 0,
-                    "strike_rate": 0,
-                    "highest_score": 0,
-                    "fifties": 0,
-                    "hundreds": 0,
-                    "wickets": 51,
-                    "economy": 8.21,
-                    "best_bowling": "4/15"
-                },
-                "selling_price": 17.0
-            },
-            {
                 "player_number": 137,
                 "name": "Mitchell Johnson",
                 "base_price": 2.0,
@@ -3578,25 +3483,6 @@
                     "best_bowling": "3/26"
                 },
                 "selling_price": 5.0
-            },
-            {
-                "player_number": 109,
-                "name": "Lasith Malinga",
-                "base_price": 5.0,
-                "status": "untouched",
-                "stats": {
-                    "matches": 122,
-                    "runs": 0,
-                    "average": 0,
-                    "strike_rate": 0,
-                    "highest_score": 0,
-                    "fifties": 0,
-                    "hundreds": 0,
-                    "wickets": 170,
-                    "economy": 7.14,
-                    "best_bowling": "5/13"
-                },
-                "selling_price": 21.0
             },
             {
                 "player_number": 123,
@@ -3635,25 +3521,6 @@
                     "best_bowling": "4/34"
                 },
                 "selling_price": 20.0
-            },
-            {
-                "player_number": 104,
-                "name": "Jasprit Bumrah",
-                "base_price": 5.0,
-                "status": "untouched",
-                "stats": {
-                    "matches": 133,
-                    "runs": 0,
-                    "average": 0,
-                    "strike_rate": 0,
-                    "highest_score": 0,
-                    "fifties": 0,
-                    "hundreds": 0,
-                    "wickets": 165,
-                    "economy": 7.3,
-                    "best_bowling": "5/10"
-                },
-                "selling_price": 35.0
             },
             {
                 "player_number": 103,
@@ -3766,6 +3633,139 @@
                     "wickets": 24,
                     "economy": 8.04,
                     "best_bowling": "3/37"
+                },
+                "selling_price": 2.0
+            },
+            {
+                "player_number": 104,
+                "name": "Jasprit Bumrah",
+                "base_price": 5.0,
+                "status": "untouched",
+                "stats": {
+                    "matches": 133,
+                    "runs": 0,
+                    "average": 0,
+                    "strike_rate": 0,
+                    "highest_score": 0,
+                    "fifties": 0,
+                    "hundreds": 0,
+                    "wickets": 165,
+                    "economy": 7.3,
+                    "best_bowling": "5/10"
+                },
+                "selling_price": 2.0
+            },
+            {
+                "player_number": 101,
+                "name": "Bhuvneshwar Kumar",
+                "base_price": 5.0,
+                "status": "untouched",
+                "stats": {
+                    "matches": 176,
+                    "runs": 0,
+                    "average": 0,
+                    "strike_rate": 0,
+                    "highest_score": 0,
+                    "fifties": 0,
+                    "hundreds": 0,
+                    "wickets": 181,
+                    "economy": 7.56,
+                    "best_bowling": "5/19"
+                },
+                "selling_price": 2.0
+            },
+            {
+                "player_number": 105,
+                "name": "Rashid Khan",
+                "base_price": 5.0,
+                "status": "untouched",
+                "stats": {
+                    "matches": 121,
+                    "runs": 0,
+                    "average": 0,
+                    "strike_rate": 0,
+                    "highest_score": 0,
+                    "fifties": 0,
+                    "hundreds": 0,
+                    "wickets": 149,
+                    "economy": 6.82,
+                    "best_bowling": "4/24"
+                },
+                "selling_price": 2.0
+            },
+            {
+                "player_number": 108,
+                "name": "Yuzvendra Chahal",
+                "base_price": 5.0,
+                "status": "untouched",
+                "stats": {
+                    "matches": 160,
+                    "runs": 0,
+                    "average": 0,
+                    "strike_rate": 0,
+                    "highest_score": 0,
+                    "fifties": 0,
+                    "hundreds": 0,
+                    "wickets": 205,
+                    "economy": 7.84,
+                    "best_bowling": "5/40"
+                },
+                "selling_price": 2.0
+            },
+            {
+                "player_number": 109,
+                "name": "Lasith Malinga",
+                "base_price": 5.0,
+                "status": "untouched",
+                "stats": {
+                    "matches": 122,
+                    "runs": 0,
+                    "average": 0,
+                    "strike_rate": 0,
+                    "highest_score": 0,
+                    "fifties": 0,
+                    "hundreds": 0,
+                    "wickets": 170,
+                    "economy": 7.14,
+                    "best_bowling": "5/13"
+                },
+                "selling_price": 2.0
+            },
+            {
+                "player_number": 110,
+                "name": "Trent Boult",
+                "base_price": 2.0,
+                "status": "untouched",
+                "stats": {
+                    "matches": 104,
+                    "runs": 0,
+                    "average": 0,
+                    "strike_rate": 0,
+                    "highest_score": 0,
+                    "fifties": 0,
+                    "hundreds": 0,
+                    "wickets": 121,
+                    "economy": 8.29,
+                    "best_bowling": "4/18"
+                },
+                "selling_price": 2.0
+            },
+            {
+                "player_number": 106,
+                "name": "Mitchell Starc",
+                "base_price": 5.0,
+                "status": "untouched",
+                "stats": {
+                    "matches": 40,
+                    "runs": 0,
+                    "average": 0,
+                    "strike_rate": 0,
+                    "highest_score": 0,
+                    "fifties": 0,
+                    "hundreds": 0,
+                    "wickets": 51,
+                    "economy": 8.21,
+                    "best_bowling": "4/15"
                 },
                 "selling_price": 2.0
             }
@@ -3920,25 +3920,6 @@
                 "selling_price": 5.0
             },
             {
-                "player_number": 207,
-                "name": "Nicholas Pooran",
-                "base_price": 2.0,
-                "status": "untouched",
-                "stats": {
-                    "matches": 76,
-                    "runs": 1769,
-                    "average": 32.16,
-                    "strike_rate": 162.3,
-                    "highest_score": 77,
-                    "fifties": 9,
-                    "hundreds": 0,
-                    "wickets": 0,
-                    "economy": 0,
-                    "best_bowling": ""
-                },
-                "selling_price": 10.0
-            },
-            {
                 "player_number": 213,
                 "name": "Dinesh Karthik",
                 "base_price": 2.0,
@@ -3996,6 +3977,25 @@
                 "selling_price": 10.0
             },
             {
+                "player_number": 201,
+                "name": "Jos Buttler",
+                "base_price": 5.0,
+                "status": "untouched",
+                "stats": {
+                    "matches": 107,
+                    "runs": 3582,
+                    "average": 38.11,
+                    "strike_rate": 147.53,
+                    "highest_score": 124,
+                    "fifties": 19,
+                    "hundreds": 7,
+                    "wickets": 0,
+                    "economy": 0,
+                    "best_bowling": ""
+                },
+                "selling_price": 5.0
+            },
+            {
                 "player_number": 202,
                 "name": "MS Dhoni",
                 "base_price": 5.0,
@@ -4015,23 +4015,23 @@
                 "selling_price": 5.0
             },
             {
-                "player_number": 201,
-                "name": "Jos Buttler",
-                "base_price": 5.0,
+                "player_number": 207,
+                "name": "Nicholas Pooran",
+                "base_price": 2.0,
                 "status": "untouched",
                 "stats": {
-                    "matches": 107,
-                    "runs": 3582,
-                    "average": 38.11,
-                    "strike_rate": 147.53,
-                    "highest_score": 124,
-                    "fifties": 19,
-                    "hundreds": 7,
+                    "matches": 76,
+                    "runs": 1769,
+                    "average": 32.16,
+                    "strike_rate": 162.3,
+                    "highest_score": 77,
+                    "fifties": 9,
+                    "hundreds": 0,
                     "wickets": 0,
                     "economy": 0,
                     "best_bowling": ""
                 },
-                "selling_price": 34.0
+                "selling_price": 2.0
             }
         ],
         "allrounders": [
@@ -4309,63 +4309,6 @@
                 "selling_price": 14.0
             },
             {
-                "player_number": 301,
-                "name": "Andre Russell",
-                "base_price": 5.0,
-                "status": "untouched",
-                "stats": {
-                    "matches": 127,
-                    "runs": 2484,
-                    "average": 29.22,
-                    "strike_rate": 174.92,
-                    "highest_score": 88,
-                    "fifties": 11,
-                    "hundreds": 0,
-                    "wickets": 115,
-                    "economy": 9.35,
-                    "best_bowling": "5/15"
-                },
-                "selling_price": 5.0
-            },
-            {
-                "player_number": 316,
-                "name": "Sunil Narine",
-                "base_price": 2.0,
-                "status": "untouched",
-                "stats": {
-                    "matches": 177,
-                    "runs": 1534,
-                    "average": 17.04,
-                    "strike_rate": 165.84,
-                    "highest_score": 109,
-                    "fifties": 7,
-                    "hundreds": 1,
-                    "wickets": 180,
-                    "economy": 6.73,
-                    "best_bowling": "5/19"
-                },
-                "selling_price": 14.0
-            },
-            {
-                "player_number": 303,
-                "name": "Hardik Pandya",
-                "base_price": 5.0,
-                "status": "untouched",
-                "stats": {
-                    "matches": 137,
-                    "runs": 2525,
-                    "average": 28.69,
-                    "strike_rate": 145.62,
-                    "highest_score": 91,
-                    "fifties": 10,
-                    "hundreds": 0,
-                    "wickets": 64,
-                    "economy": 9.1,
-                    "best_bowling": "3/17"
-                },
-                "selling_price": 28.0
-            },
-            {
                 "player_number": 318,
                 "name": "Washington Sundar",
                 "base_price": 2.0,
@@ -4383,25 +4326,6 @@
                     "best_bowling": "3/16"
                 },
                 "selling_price": 8.0
-            },
-            {
-                "player_number": 304,
-                "name": "Glenn Maxwell",
-                "base_price": 5.0,
-                "status": "untouched",
-                "stats": {
-                    "matches": 134,
-                    "runs": 1768,
-                    "average": 24.74,
-                    "strike_rate": 156.74,
-                    "highest_score": 95,
-                    "fifties": 18,
-                    "hundreds": 0,
-                    "wickets": 37,
-                    "economy": 8.28,
-                    "best_bowling": "2/15"
-                },
-                "selling_price": 22.0
             },
             {
                 "player_number": 323,
@@ -4423,25 +4347,6 @@
                 "selling_price": 5.0
             },
             {
-                "player_number": 325,
-                "name": "Kieron Pollard",
-                "base_price": 2.0,
-                "status": "untouched",
-                "stats": {
-                    "matches": 189,
-                    "runs": 3412,
-                    "average": 28.67,
-                    "strike_rate": 147.33,
-                    "highest_score": 87,
-                    "fifties": 16,
-                    "hundreds": 0,
-                    "wickets": 69,
-                    "economy": 8.79,
-                    "best_bowling": "4/44"
-                },
-                "selling_price": 13.0
-            },
-            {
                 "player_number": 315,
                 "name": "Sam Curran",
                 "base_price": 2.0,
@@ -4461,6 +4366,63 @@
                 "selling_price": 6.0
             },
             {
+                "player_number": 317,
+                "name": "Dwayne Bravo",
+                "base_price": 2.0,
+                "status": "untouched",
+                "stats": {
+                    "matches": 161,
+                    "runs": 1560,
+                    "average": 22.61,
+                    "strike_rate": 129.57,
+                    "highest_score": 70,
+                    "fifties": 5,
+                    "hundreds": 0,
+                    "wickets": 183,
+                    "economy": 8.38,
+                    "best_bowling": "4/22"
+                },
+                "selling_price": 10.0
+            },
+            {
+                "player_number": 303,
+                "name": "Hardik Pandya",
+                "base_price": 5.0,
+                "status": "untouched",
+                "stats": {
+                    "matches": 137,
+                    "runs": 2525,
+                    "average": 28.69,
+                    "strike_rate": 145.62,
+                    "highest_score": 91,
+                    "fifties": 10,
+                    "hundreds": 0,
+                    "wickets": 64,
+                    "economy": 9.1,
+                    "best_bowling": "3/17"
+                },
+                "selling_price": 2.0
+            },
+            {
+                "player_number": 301,
+                "name": "Andre Russell",
+                "base_price": 5.0,
+                "status": "untouched",
+                "stats": {
+                    "matches": 127,
+                    "runs": 2484,
+                    "average": 29.22,
+                    "strike_rate": 174.92,
+                    "highest_score": 88,
+                    "fifties": 11,
+                    "hundreds": 0,
+                    "wickets": 115,
+                    "economy": 9.35,
+                    "best_bowling": "5/15"
+                },
+                "selling_price": 2.0
+            },
+            {
                 "player_number": 302,
                 "name": "Ben Stokes",
                 "base_price": 5.0,
@@ -4477,7 +4439,7 @@
                     "economy": 8.64,
                     "best_bowling": "3/15"
                 },
-                "selling_price": 18.0
+                "selling_price": 2.0
             },
             {
                 "player_number": 305,
@@ -4496,26 +4458,64 @@
                     "economy": 7.62,
                     "best_bowling": "5/16"
                 },
-                "selling_price": 21.0
+                "selling_price": 2.0
             },
             {
-                "player_number": 317,
-                "name": "Dwayne Bravo",
+                "player_number": 304,
+                "name": "Glenn Maxwell",
+                "base_price": 5.0,
+                "status": "untouched",
+                "stats": {
+                    "matches": 134,
+                    "runs": 1768,
+                    "average": 24.74,
+                    "strike_rate": 156.74,
+                    "highest_score": 95,
+                    "fifties": 18,
+                    "hundreds": 0,
+                    "wickets": 37,
+                    "economy": 8.28,
+                    "best_bowling": "2/15"
+                },
+                "selling_price": 2.0
+            },
+            {
+                "player_number": 316,
+                "name": "Sunil Narine",
                 "base_price": 2.0,
                 "status": "untouched",
                 "stats": {
-                    "matches": 161,
-                    "runs": 1560,
-                    "average": 22.61,
-                    "strike_rate": 129.57,
-                    "highest_score": 70,
-                    "fifties": 5,
-                    "hundreds": 0,
-                    "wickets": 183,
-                    "economy": 8.38,
-                    "best_bowling": "4/22"
+                    "matches": 177,
+                    "runs": 1534,
+                    "average": 17.04,
+                    "strike_rate": 165.84,
+                    "highest_score": 109,
+                    "fifties": 7,
+                    "hundreds": 1,
+                    "wickets": 180,
+                    "economy": 6.73,
+                    "best_bowling": "5/19"
                 },
-                "selling_price": 10.0
+                "selling_price": 2.0
+            },
+            {
+                "player_number": 325,
+                "name": "Kieron Pollard",
+                "base_price": 2.0,
+                "status": "untouched",
+                "stats": {
+                    "matches": 189,
+                    "runs": 3412,
+                    "average": 28.67,
+                    "strike_rate": 147.33,
+                    "highest_score": 87,
+                    "fifties": 16,
+                    "hundreds": 0,
+                    "wickets": 69,
+                    "economy": 8.79,
+                    "best_bowling": "4/44"
+                },
+                "selling_price": 2.0
             }
         ]
     }
